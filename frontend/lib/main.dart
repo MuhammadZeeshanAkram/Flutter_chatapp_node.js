@@ -3,13 +3,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/Screens/home_screen.dart';
 
-
 void main() => runApp(
-  DevicePreview(
-    enabled: !kReleaseMode,
-    builder: (context) => const MyApp(), // Wrap your app
-  ),
-);
+      DevicePreview(
+        enabled: !kReleaseMode,
+        builder: (context) => const MyApp(), // Wrap your app
+      ),
+    );
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -17,15 +16,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // ignore: deprecated_member_use
       useInheritedMediaQuery: true,
       theme: ThemeData(
         fontFamily: 'OpenSans',
-        primaryColor: const Color(0xFF075E54), 
-        accentColor: const Color(0xFF128C7E),
+        primaryColor: const Color(0xFF075E54), // Primary color for app
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: const Color(0xFF075E54), // Set the primary color
+          secondary: const Color(0xFF128C7E), // Set the secondary color
+          onPrimary: Colors.white, // Set text color on primary (like AppBar)
+        ),
       ),
       locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
+      builder: (context, widget) {
+        return DevicePreview.appBuilder(context,
+            widget); // Pass the widget through DevicePreview.appBuilder
+      },
       home: const HomeScreen(),
     );
   }
