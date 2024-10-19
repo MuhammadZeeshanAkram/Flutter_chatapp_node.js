@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:frontend/Model/chat_model.dart';
+import 'package:frontend/Screens/individual_screen.dart';
 
 class CustomCard extends StatelessWidget {
   const CustomCard({super.key,required this.chatModel});
@@ -9,7 +10,9 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const IndividualPage()));
+      },
       child: Column(
         children: [
           ListTile(
