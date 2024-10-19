@@ -6,43 +6,60 @@ class CustomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: CircleAvatar(
-        radius: 30,
-        backgroundColor: Colors.grey[200], // Optional: Add background color to avoid null background
-        child: ClipOval( // Clip the SVG to the avatar shape
-          child: Container(
-            padding: const EdgeInsets.all(8.0), // Optional: Add padding if necessary
-            child: SvgPicture.asset(
-              "assets/icons/2.svg",
-              color: Colors.black,
-              height: 30, // Ensure the SVG has a proper size
-              width: 30,
-              fit: BoxFit.cover, // Ensures the SVG fits well
-            ),
-          ),
-        ),
-      ),
-      title: const Text(
-        "Name",
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 16,
-        ),
-      ),
-      subtitle: const Row(
+    return InkWell(
+      onTap: () {},
+      child: Column(
         children: [
-          Icon(Icons.done_all),
-          SizedBox(width: 5),
-          Text(
-            "Message here is I am Zeeshan",
-            style: TextStyle(
-              fontSize: 13,
+          ListTile(
+            leading: CircleAvatar(
+              radius: 30,
+              backgroundColor: Colors.blueGrey, // Optional: Add background color to avoid null background
+              child: ClipOval(
+                child: Container(
+                  padding: const EdgeInsets.all(8.0), // Optional: Add padding if necessary
+                  child: SvgPicture.asset(
+                    "assets/icons/1.svg",
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                    height: 38, // Ensure the SVG has a proper size
+                    width: 38,
+                    fit: BoxFit.cover, // Ensures the SVG fits well
+                  ),
+                ),
+              ),
+            ),
+            title: const Text(
+              "Name",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
+            ),
+            subtitle: const Row(
+              children: [
+                Icon(Icons.done_all),
+                SizedBox(width: 5),
+                Text(
+                  "Message here is I am Zeeshan",
+                  style: TextStyle(
+                    fontSize: 13,
+                  ),
+                ),
+              ],
+            ),
+            trailing: const Text("2432"),
+          ),
+          const SizedBox(height: 2),  // Add some space above the Divider
+          const Padding(
+            padding: EdgeInsets.only(left: 80 , right: 20),
+            child: Divider(
+              thickness: 1,  // Set thickness here
+              color: Colors.black,  // Optional: Add color to make it more prominent
+               // Optional: Add indentation from the right
             ),
           ),
+          const SizedBox(height: 10),  // Add some space below the Divider
         ],
       ),
-      trailing: const Text("2432"),
     );
   }
 }
