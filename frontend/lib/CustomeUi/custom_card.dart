@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:frontend/Model/chat_model.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({super.key});
+  const CustomCard({super.key,required this.chatModel});
+  final ChatModel chatModel;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class CustomCard extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(8.0), // Optional: Add padding if necessary
                   child: SvgPicture.asset(
-                    "assets/icons/1.svg",
+                    chatModel.isGroup ? "assets/icons/1.svg" : "assets/icons/2.svg",
                     color: const Color.fromARGB(255, 255, 255, 255),
                     height: 38, // Ensure the SVG has a proper size
                     width: 38,
@@ -27,26 +29,26 @@ class CustomCard extends StatelessWidget {
                 ),
               ),
             ),
-            title: const Text(
-              "Name",
-              style: TextStyle(
+            title:  Text(
+              chatModel.name,
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
               ),
             ),
-            subtitle: const Row(
+            subtitle: Row(
               children: [
-                Icon(Icons.done_all),
-                SizedBox(width: 5),
+                const Icon(Icons.done_all),
+                const SizedBox(width: 5),
                 Text(
-                  "Message here is I am Zeeshan",
-                  style: TextStyle(
+                  chatModel.currentMessage,
+                  style: const TextStyle(
                     fontSize: 13,
                   ),
                 ),
               ],
             ),
-            trailing: const Text("2432"),
+            trailing:  Text(chatModel.time),
           ),
           const SizedBox(height: 2),  // Add some space above the Divider
           const Padding(
