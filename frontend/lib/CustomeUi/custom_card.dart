@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:frontend/Model/chat_model.dart';
 import 'package:frontend/Screens/individual_screen.dart';
 
+
 class CustomCard extends StatelessWidget {
   const CustomCard({super.key,required this.chatModel});
   final ChatModel chatModel;
@@ -11,7 +12,8 @@ class CustomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => const IndividualPage()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) =>  IndividualPage(
+          chatModel: chatModel,)));
       },
       child: Column(
         children: [
