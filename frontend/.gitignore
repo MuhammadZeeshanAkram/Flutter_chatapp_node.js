@@ -41,3 +41,65 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+
+# Flutter build output
+build/
+*.flutter-plugins
+*.flutter-plugins-dependencies
+.packages
+.flutter-plugins
+.dart_tool/
+.idea/
+
+# Android build output
+android/app/build/
+android/.cxx/
+android/local.properties
+
+# iOS build output
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/App.framework
+ios/Flutter/FlutterPluginRegistrant.framework
+ios/Runner.xcworkspace/
+ios/Runner.xcodeproj/project.xcworkspace/
+
+# Windows build output
+windows/CMakeFiles/
+windows/build/
+windows/Debug/
+windows/Release/
+windows/flutter/ephemeral/
+
+# Linux build output
+linux/CMakeFiles/
+linux/build/
+linux/flutter/ephemeral/
+
+# macOS build output
+macos/Flutter/Flutter.framework
+macos/Flutter/Flutter.podspec
+macos/Flutter/Generated.xcconfig
+macos/Pods/
+macos/build/
+macos/.symlinks/
+macos/flutter/ephemeral/
+
+# CMake specific
+**/CMakeFiles/
+**/CMakeCache.txt
+**/cmake_install.cmake
+**/Makefile
+**/*.o
+**/*.obj
+**/lib/
+
+# Other platform-specific C++ build artifacts
+android/src/main/cpp/CMakeLists.txt.user
+windows/flutter/generated_plugin_registrant.cc
+linux/flutter/generated_plugin_registrant.cc
+macos/Flutter/GeneratedPluginRegistrant.swift
