@@ -14,36 +14,15 @@ android/.cxx/
 android/local.properties
 
 # iOS build output
-ios/Flutter/Flutter.framework
-ios/Flutter/Flutter.podspec
-ios/Flutter/Generated.xcconfig
-ios/Pods/
-ios/.symlinks/
-ios/Flutter/App.framework
-ios/Flutter/FlutterPluginRegistrant.framework
-ios/Runner.xcworkspace/
-ios/Runner.xcodeproj/project.xcworkspace/
+ios/
 
 # Windows build output
-windows/CMakeFiles/
-windows/build/
-windows/Debug/
-windows/Release/
-windows/flutter/ephemeral/
-
+windows/
 # Linux build output
-linux/CMakeFiles/
-linux/build/
-linux/flutter/ephemeral/
+linux/
 
 # macOS build output
-macos/Flutter/Flutter.framework
-macos/Flutter/Flutter.podspec
-macos/Flutter/Generated.xcconfig
-macos/Pods/
-macos/build/
-macos/.symlinks/
-macos/flutter/ephemeral/
+macos/
 
 # CMake specific files
 **/CMakeFiles/
@@ -55,7 +34,7 @@ macos/flutter/ephemeral/
 **/lib/
 
 # Other platform-specific C++ build artifacts
-android/src/main/cpp/CMakeLists.txt.user
-windows/flutter/generated_plugin_registrant.cc
-linux/flutter/generated_plugin_registrant.cc
-macos/Flutter/GeneratedPluginRegistrant.swift
+android/
+windows/
+linux/
+macos/
